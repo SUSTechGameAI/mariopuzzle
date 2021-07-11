@@ -30,6 +30,18 @@ gym (0.18.0)
 java (9)
 ```
 
+### Operating System:
+
+Currently the mariopuzzle cannot support Windows. If you are using Windows, you can change the code in `/project/pcg-gym/pcg_gym/envs/mario_puzzle.py` Line57,58:
+```
+os.system("java -jar "+rootpath + "/Mario-AI-Framework-master.jar " + rootpath +
+                  "/test_pool/" + str(self.id) + " " + str(self.port)+" "+self.visuals+" &")
+```
+to:
+```
+os.system("start /b java -jar "+rootpath + "/Mario-AI-Framework-master.jar " + rootpath +
+                  "/test_pool/" + str(self.id) + " " + str(self.port)+" "+self.visuals)
+```
 
 
 ### How to use mariopuzzle game environment:
